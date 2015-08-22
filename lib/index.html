@@ -1,0 +1,29 @@
+
+<!-- Love, Josh-->
+<!-- http://github.com/lokua/happy-birthday--><!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Happy Birthday! </title>
+  <meta name="description" content="rawesomeness">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans+Mono">
+</head>
+<body ng-app="app" ng-controller="MainController as main">
+  <main>
+    <div class="container"> 
+      <div class="line">
+        <div ng-repeat="letter in main.tiding track by $index" class="letter clr--{{ main.getColor($index) }}">{{letter}}</div>
+      </div>
+      <div class="line">
+        <div ng-repeat="letter in main.who track by $index" class="letter name clr--{{ main.getColor($index) }}">{{letter}}</div>
+      </div>
+    </div>
+  </main>
+  <script src="deps/Logger.min.js"></script>
+  <script src="deps/jquery.min.js"></script>
+  <script src="deps/angular.min.js"></script>
+  <script src="deps/move.min.js"></script>
+  <script src="happy-birthday.js"></script>
+</body>

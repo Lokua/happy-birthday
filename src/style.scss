@@ -1,0 +1,55 @@
+
+$colors: red, orange, yellow, green, blue, purple, violet;
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Droid Sans Mono', monospace;
+  background: #eee;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0;
+  transition: opacity 10s;
+}
+
+.opaque {
+  opacity: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+.line {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.letter {
+  font-size: 48px;
+  transition: all 1s;
+}
+
+.name {
+  font-size: 64px;
+}
+
+@each $c in $colors {
+  .clr--#{$c} {
+    color: $c;
+  }
+}
