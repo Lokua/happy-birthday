@@ -1,10 +1,12 @@
-// Love, Josh
-// http://github.com/lokua/happy-birthday
+//    +-----------------------------------------+
+//    | Love, Josh                              |
+//    | https://github.com/lokua/happy-birthday |
+//    +-----------------------------------------+
 doctype
 head(lang='en')
   meta(charset='utf-8')
   meta(http-equiv='x-ua-compatible' content='ie=edge')
-  title Happy Birthday! 
+  title Happy Birthday!
   meta(name='description' content='rawesomeness')
   meta(name='viewport' content='width=device-width, initial-scale=1')
   link(rel='stylesheet' href='style.css')
@@ -12,18 +14,16 @@ head(lang='en')
   
 body(ng-app='app' ng-controller='MainController as main')
 
-  main
+  main(ng-show='main.show')
   
-    .container 
-      .line
-        .letter(
-          ng-repeat='letter in main.tiding track by $index'
+    .container.move-along(ng-show='!main.registered') {{main.nope}}
+    .container.cmon(ng-show='main.registered && !main.valid') {{main.notToday}}
+  
+    .container(ng-show='main.registered && main.valid') 
+      .line: .letter(ng-repeat='letter in main.tiding track by $index'
           class='clr--{{ main.getColor($index) }}')
           | {{letter}}
-      
-      .line
-        .letter.name(
-          ng-repeat='letter in main.who track by $index'
+      .line: .letter.name(ng-repeat='letter in main.name track by $index'
           class='clr--{{ main.getColor($index) }}')
           | {{letter}}
     
